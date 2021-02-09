@@ -1,5 +1,8 @@
 # nefteavtomat-test
 
+## Тестовое задание для "Нефтеавтоматика"
+[Демка nefteavtomat-test.surge.sh](nefteavtomat-test.surge.sh)
+
 ## Project setup
 ```
 npm install

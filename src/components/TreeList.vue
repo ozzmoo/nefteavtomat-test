@@ -1,37 +1,24 @@
 <template>
   <div class="tree">
     <ul>
-      <li v-for="item in treeData" :key="item.id">
-        {{ item.name }}
-        <ul v-if="item.childrens.length > 0 && showNode">
-          <TreeList :treeData="item.childrens" />
-        </ul>
-      </li>
+      <TreeItem
+        v-for="node in treeData"
+        :key="node.id"
+        :title="node.name"
+        :childrens="node.childrens"
+      />
     </ul>
   </div>
 </template>
 
 <script>
+import TreeItem from "./TreeItem";
 export default {
   name: "TreeList",
+  components: { TreeItem },
   props: {
     treeData: [Array, Object],
   },
-
-  data() {
-    return {
-      showNode: true,
-    };
-  },
-  methods: {
-    toogleNode() {
-      this.showNode = !this.showNode;
-      console.log("clicked");
-    },
-  },
 };
 </script>
-
-<style>
-</style>
 
